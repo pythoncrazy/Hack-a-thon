@@ -51,7 +51,7 @@ var myGameArea = {
     clear : function() {
         this.gravity=0;
         this.interval=0;
-
+        
         this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
     }
     
@@ -167,7 +167,6 @@ function everyinterval(n) {
 
 function accelerate(n) {
     if(myGameArea.crashWith!=true){
-
         myGamePiece.gravity=n;
     }
     
@@ -181,9 +180,10 @@ function reset(){
     myGamePiece.gravitySpeed=0;
     myGamePiece.gravity=0;
     accelerate(0);
-    myGameArea.canvas.clearRect(0, 0, myGameArea.canvas.width, myGameArea.canvas.height);
+    
     myGamePiece.gravity = 0;
     myGameArea.frameNo=0;
+    myGameArea.clear();
     myGameArea.start();
     
 
